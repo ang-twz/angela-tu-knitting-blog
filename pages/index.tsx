@@ -1,3 +1,4 @@
+import prisma from '../lib/prisma';
 import React from "react"
 import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
