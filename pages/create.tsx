@@ -54,7 +54,6 @@ const Draft: React.FC = () => {
           justify-content: center;
           align-items: center;
         }
-
         input[type='text'],
         textarea {
           width: 100%;
@@ -63,13 +62,11 @@ const Draft: React.FC = () => {
           border-radius: 0.25rem;
           border: 0.125rem solid rgba(0, 0, 0, 0.2);
         }
-
         input[type='submit'] {
           background: #ececec;
           border: 0;
           padding: 1rem 2rem;
         }
-
         .back {
           margin-left: 1rem;
         }

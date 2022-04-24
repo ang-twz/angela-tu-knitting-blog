@@ -8,13 +8,21 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Image {
+  id       String @default(cuid()) @id
+  publicId String @unique
+  format   String
+  version  String
+}
+
 model Post {
-  id        String  @id @default(cuid())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  String?
+  id          String  @id @default(cuid())
+  title       String
+  content     String?
+  published   Boolean @default(false)
+  author      User?   @relation(fields: [authorId], references: [id])
+  authorId    String?
+  // queuedFrom  User[] relation(name: "queuedPosts")
 }
 
 model User {
@@ -28,6 +36,7 @@ model User {
   posts         Post[]
   accounts      Account[]
   sessions      Session[]
+  // queuedPosts   Post[] relation(name: "queuedFrom")
 
   @@map(name: "users")
 }
@@ -72,3 +81,4 @@ model VerificationToken {
   @@unique([identifier, token])
   @@map("verificationtokens")
 }
+
