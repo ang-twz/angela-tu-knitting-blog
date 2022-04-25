@@ -21,8 +21,13 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
       author: {
         select: { name: true },
       },
+      image: {
+        select: {id: true, publicId: true, format: true, version: true},
+      },
     },
   });
+
+  console.log("this is drafts " + JSON.stringify(drafts))
   return {
     props: { drafts },
   };

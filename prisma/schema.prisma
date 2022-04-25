@@ -13,16 +13,18 @@ model Image {
   publicId String @unique
   format   String
   version  String
+  post     Post[]
 }
 
 model Post {
-  id          String  @id @default(cuid())
-  title       String
-  content     String?
-  published   Boolean @default(false)
-  author      User?   @relation(fields: [authorId], references: [id])
-  authorId    String?
-  // queuedFrom  User[] relation(name: "queuedPosts")
+  id            String  @id @default(cuid())
+  title         String
+  content       String?
+  published     Boolean @default(false)
+  author        User?   @relation(fields: [authorId], references: [id])
+  authorId      String?
+  image         Image? @relation(fields: [imageId], references: [id])
+  imageId       String?
 }
 
 model User {
@@ -36,7 +38,6 @@ model User {
   posts         Post[]
   accounts      Account[]
   sessions      Session[]
-  // queuedPosts   Post[] relation(name: "queuedFrom")
 
   @@map(name: "users")
 }

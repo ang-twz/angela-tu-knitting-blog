@@ -16,6 +16,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
       author: {
         select: { name: true, email: true },
       },
+      image: {
+        select: {id: true, publicId: true, format: true, version: true},
+      },
     },
   });
   return {
@@ -61,6 +64,10 @@ const Post: React.FC<PostProps> = (props) => {
         {userHasValidSession && postBelongsToUser && (
           <button onClick={() => deletePost(props.id)}>Delete</button>
         )}
+        {props.image && <img
+              src={`https://res.cloudinary.com/${process.env.CLOUD_NAME}/v${props.image.version}/${props.image.publicId}.${props.image.format}`}
+              key={props.image.publicId}
+            />}
       </div>
       <style jsx>{`
         .page {

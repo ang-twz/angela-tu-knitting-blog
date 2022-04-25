@@ -7,5 +7,6 @@ export default async function handle(req, res) {
       where: { id: imageId },
     }
   )
+  console.log("this is images " + images);
   res.json(images);
 }

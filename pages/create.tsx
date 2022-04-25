@@ -5,11 +5,14 @@ import Router from 'next/router';
 const Draft: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [imageUploaded, setImageUploaded] = useState();
+  const [imageId, setImageId] = useState();
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      const body = { title, content };
+      const body = { title, content, imageId};
+      console.log("this is the body " + JSON.stringify(body));
       await fetch('/api/post', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -19,6 +22,39 @@ const Draft: React.FC = () => {
     } catch (error) {
       console.error(error);
     }
+  }
+  
+
+    const handleChange = (event) => {
+      setImageUploaded(event.target.files[0]);
+    };
+
+    const submitImage = async (e) => {
+      e.preventDefault();
+
+      if (!imageUploaded) {
+        return;
+      }
+
+    try {
+      const formData = new FormData();
+      formData.append("image", imageUploaded);
+
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const images = await response.json();
+      console.log("this is images " + images.id);
+      setImageId(images.id)
+      console.log("this is images " + images.id);
+
+      // Router.push("/");
+    } catch (error) {
+      console.error(error);
+    }
+  
   };
 
   return (
@@ -44,6 +80,19 @@ const Draft: React.FC = () => {
           <a className="back" href="#" onClick={() => Router.push('/')}>
             or Cancel
           </a>
+        </form>
+      </div>
+      <div className="page">
+        <form onSubmit={submitImage}>
+          <h1>Upload Image</h1>
+
+          <input
+            onChange={handleChange}
+            accept=".jpg, .png, .gif, .jpeg"
+            type="file"
+          ></input>
+
+          <input type="submit" value="Upload" />
         </form>
       </div>
       <style jsx>{`

@@ -24,7 +24,7 @@ const Upload = () => {
         method: "POST",
         body: formData,
       });
-      console.log("yay we got the response", response)
+      // console.log("yay we got the response", response)
 
       Router.push("/");
     } catch (error) {

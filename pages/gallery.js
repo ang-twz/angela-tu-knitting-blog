@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 
 export const getServerSideProps = async () => {
     const res = await fetch(`${process.env.SERVER_PATH}/api/images`);
+    console.log("getting images")
     console.log(res);
     const images = await res.json();
     return {
