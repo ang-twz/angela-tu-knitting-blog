@@ -11,6 +11,9 @@ export const getStaticProps: GetStaticProps = async () => {
       author: {
         select: { name: true },
       },
+      image: {
+        select: {id: true, publicId: true, format: true, version: true},
+      },
     },
   });
   return { props: { feed } };
