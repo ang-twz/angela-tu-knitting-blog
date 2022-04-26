@@ -18,7 +18,10 @@ export default async function handle(req, res) {
       title: title,
       content: content,
       author: { connect: { email: session?.user?.email } },
-      imageId
+      image: { connect: {id: imageId}}
+    },
+    include: {
+      image: true,
     }
   });
   
