@@ -124,6 +124,9 @@ const Header: React.FC = () => {
         <Link href="/drafts">
           <a data-active={isActive('/drafts')}>My drafts</a>
         </Link>
+        <Link href="/posts">
+          <a data-active={isActive('/posts')}>My posts</a>
+        </Link>
         {/* <Link href="/upload">
           <a data-active={isActive('/upload')}>Upload</a>
         </Link>
