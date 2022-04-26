@@ -9,18 +9,16 @@ export default async function handle(req, res) {
 
   console.log("this is req.body " + JSON.stringify(req.body))
 
+  const promiseOfASession = getSession({ req })
   const session = await getSession({ req });
 
-
   const result = await prisma.post.create({
+    // @ts-ignore
     data: {
       title: title,
       content: content,
       author: { connect: { email: session?.user?.email } },
-      image: { connect: {id: imageId} }
-    },
-    include: {
-      image: true,
+      imageId
     }
   });
   
