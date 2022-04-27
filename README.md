@@ -9,7 +9,7 @@ This website serves as an online destination for users to be able to view and up
   - Prisma as the ORM for migrations and database access
   - Postgres as the database
   - NextAuth.js for authentication via Github
-  - Typescript and Javascript as the programming language
+  - Typescript and Javascript as the programming languages
   - Vercel for deployment
   - Cloudinary as the digital asset management system
 
