@@ -14,7 +14,7 @@ const Header: React.FC = () => {
     <div className="left">
       <Link href="/">
         <a className="bold" data-active={isActive('/')}>
-          Feed
+            Patterns
         </a>
       </Link>
       <style jsx>{`
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
       <div className="left">
         <Link href="/">
           <a className="bold" data-active={isActive('/')}>
-            Feed
+            Patterns
           </a>
         </Link>
         <style jsx>{`
@@ -118,7 +118,7 @@ const Header: React.FC = () => {
       <div className="left">
         <Link href="/">
           <a className="bold" data-active={isActive('/')}>
-            Feed
+            Patterns
           </a>
         </Link>
         <Link href="/drafts">
@@ -127,12 +127,6 @@ const Header: React.FC = () => {
         <Link href="/posts">
           <a data-active={isActive('/posts')}>My posts</a>
         </Link>
-        {/* <Link href="/upload">
-          <a data-active={isActive('/upload')}>Upload</a>
-        </Link>
-        <Link href="/gallery">
-          <a data-active={isActive('/gallery')}>Gallery</a>
-        </Link> */}
         <style jsx>{`
           .bold {
             font-weight: bold;
@@ -208,6 +202,7 @@ const Header: React.FC = () => {
       {right}
       <style jsx>{`
         nav {
+          background-image: url("https://res.cloudinary.com/dhw4wtx8z/image/upload/v1651074364/85863432-A9B3-4DA6-A045-7AE7F2650C97_1_201_a_kynhvx.heic");
           display: flex;
           padding: 2rem;
           align-items: center;

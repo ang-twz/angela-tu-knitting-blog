@@ -65,10 +65,6 @@ const Post: React.FC<PostProps> = (props) => {
   }
   const userHasValidSession = Boolean(session);
   const postBelongsToUser = session?.user?.email === props.author?.email;
-  // let title = props.title;
-  // if (!props.published) {
-  //   title = `${title} (Draft)`;
-  // }
 
   const updateData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -112,9 +108,6 @@ const Post: React.FC<PostProps> = (props) => {
     <Layout>
       <div>
         <form onSubmit = {updateData}>
-        {/* <h2>{props.title} (Draft)</h2>
-        <p>By {props?.author?.name || 'Unknown author'}</p>
-        <ReactMarkdown children={props.content} /> */}
         <br></br>
         <br></br>
         {!props.published && userHasValidSession && postBelongsToUser && editable && (
@@ -154,10 +147,6 @@ const Post: React.FC<PostProps> = (props) => {
           <button onClick={() => setEditable(false)}>Cancel</button>
           <button type="submit" onClick={() => updatePost(props.id)}>Update</button>
           <button onClick={() => publishPost(props.id)}>Publish</button>
-          {/* <input disabled={!content || !title} type="submit" value="Create" /> */}
-          {/* <a className="back" href="#" onClick={() => Router.push('/')}>
-            or Cancel
-          </a> */}
           <button onClick={() => deletePost(props.id)}>Delete</button>
           </>
         )}

@@ -49,37 +49,6 @@ const Draft: React.FC = () => {
       console.error(error);
     }
   }
-  
-
-    // const handleChange = (event) => {
-    //   setImageUploaded(event.target.files[0]);
-    // };
-
-  //   const submitImage = async (e) => {
-  //     e.preventDefault();
-
-  //     if (!imageUploaded) {
-  //       return;
-  //     }
-
-  //   try {
-  //     const formData = new FormData();
-  //     formData.append("image", imageUploaded);
-
-  //     const response = await fetch("/api/upload", {
-  //       method: "POST",
-  //       body: formData,
-  //     });
-
-  //     const images = await response.json();
-  //     setImageId(images.id)
-
-  //     // Router.push("/");
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  
-  // };
 
   return (
     <Layout>
@@ -111,19 +80,6 @@ const Draft: React.FC = () => {
           </a>
         </form>
       </div>
-      {/* <div className="page">
-        <form onSubmit={submitImage}>
-          <h1>Upload Image</h1>
-
-          <input
-            onChange={handleChange}
-            accept=".jpg, .png, .gif, .jpeg"
-            type="file"
-          ></input>
-
-          <input type="submit" value="Upload" />
-        </form>
-      </div> */}
       <style jsx>{`
         .page {
           background: var(--geist-background);
