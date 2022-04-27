@@ -185,7 +185,17 @@ const Post: React.FC<PostProps> = (props) => {
           <ReactMarkdown children={props.content} />
           <button onClick={() => deletePost(props.id)}>Delete</button></>
         )}
-        {props.published && !userHasValidSession && (
+        {props.published && !userHasValidSession && !postBelongsToUser && (
+          <>
+          <h2>{props.title}</h2>
+          <p>By {props?.author?.name || 'Unknown author'}</p>
+          {props.image && <img
+              src={`https://res.cloudinary.com/${process.env.CLOUD_NAME}/v${props.image.version}/${props.image.publicId}.${props.image.format}`}
+              key={props.image.publicId}
+            />}
+          <ReactMarkdown children={props.content} /></>
+        )}
+        {props.published && userHasValidSession && !postBelongsToUser && (
           <>
           <h2>{props.title}</h2>
           <p>By {props?.author?.name || 'Unknown author'}</p>
