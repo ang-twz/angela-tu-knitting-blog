@@ -171,6 +171,7 @@ const Post: React.FC<PostProps> = (props) => {
             />}
           <ReactMarkdown children={props.content} />
           <button onClick={() => setEditable(true)}>Edit</button>
+          <button onClick={() => publishPost(props.id)}>Publish</button>
           <button onClick={() => deletePost(props.id)}>Delete</button></>
         )}
         {props.published && userHasValidSession && postBelongsToUser && (
