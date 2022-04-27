@@ -4,11 +4,11 @@ This website serves as an online destination for users to be able to view and up
 
 <h3> This application uses the following technologies: </h3>
   - Next.js as the React framework
-  - Next.js API routes for server-side API routes as the backend
+  - Next.js API routes for server side API routes as the backend
   - Prisma as the ORM for migrations and database access
-  - PostgreSQL as the database
-  - NextAuth.js for authentication via GitHub (OAuth)
-  - TypeScript and Javascript as the programming language
+  - Postgres as the database
+  - NextAuth.js for authentication via Github
+  - Typescript and Javascript as the programming language
   - Vercel for deployment
   - Cloudinary as the digital asset management system
 
