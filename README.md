@@ -4,14 +4,6 @@ This website serves as an online destination for users to be able to view and up
 
 <h3> This application uses the following technologies: </h3>
 
-  - 
-  - Login through Github authentication
-  - Create a post with title, content and image saved to drafts
-  - Edit, Publish, or Delete a draft
-  - Delete published posts
-
-<h3> This application uses the following technologies: </h3>
-
   - Next.js as the React framework
   - Next.js API routes for server side API routes as the backend
   - Prisma as the ORM for migrations and database access
