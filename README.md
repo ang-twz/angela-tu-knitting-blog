@@ -2,7 +2,7 @@
 
 This website serves as an online destination for users to be able to view and upload knitting patterns. To visit, please <a href="https://angela-tu-knitting-blog.vercel.app/">click here</a>. 
 
-<h2> This application uses the following technologies: </h2>
+<h3> This application uses the following technologies: </h3>
   - Next.js as the React framework
   - Next.js API routes for server-side API routes as the backend
   - Prisma as the ORM for migrations and database access
@@ -10,8 +10,9 @@ This website serves as an online destination for users to be able to view and up
   - NextAuth.js for authentication via GitHub (OAuth)
   - TypeScript and Javascript as the programming language
   - Vercel for deployment
+  - Cloudinary as the digital asset management system
 
-<h2> Users have the ability to: </h2>
+<h3> Users have the ability to: </h3>
 
   - View a public feed as an unauthenticated user
   - Login through Github authentication
