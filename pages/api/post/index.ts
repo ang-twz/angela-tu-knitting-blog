@@ -9,7 +9,6 @@ export default async function handle(req, res) {
 
   console.log("this is req.body " + JSON.stringify(req.body))
 
-  const promiseOfASession = getSession({ req })
   const session = await getSession({ req });
 
   const result = await prisma.post.create({

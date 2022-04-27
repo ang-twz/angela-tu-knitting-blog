@@ -19,27 +19,18 @@ export type PostProps = {
   } | null;
 };
 
-// export const getServerSideProps = async () => {
-//   const res = await fetch(`${process.env.SERVER_PATH}/api/images?id=vd1rvkiah1ckhdijmdqh`);
-//   console.log("getting images")
-//   console.log(res);
-//   const images = await res.json();
-//   return {
-//     props: { images },
-//   };
-// };
-
 const Post: React.FC<{ post: PostProps }> = ({ post }) => {
   const authorName = post.author ? post.author.name : "Unknown author";
   return (
     <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
       <h2>{post.title}</h2>
+      {post.image && <img
+        src={`https://res.cloudinary.com/${process.env.CLOUD_NAME}/v${post.image.version}/${post.image.publicId}.${post.image.format}`}
+        key={post.image.publicId}
+      />}
+      <br></br>
       <small>By {authorName}</small>
-      <ReactMarkdown children={post.content} />
-            {post.image && <img
-              src={`https://res.cloudinary.com/${process.env.CLOUD_NAME}/v${post.image.version}/${post.image.publicId}.${post.image.format}`}
-              key={post.image.publicId}
-            />}
+      {/* <ReactMarkdown children={post.content} /> */}
       <style jsx>{`
         div {
           color: inherit;

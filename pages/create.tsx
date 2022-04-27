@@ -15,15 +15,9 @@ const Draft: React.FC = () => {
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    // if (!imageUploaded) {
-    //   return;
-    // }
-
     try {
       type Image = {
         id: string;
-        publicId: string;
-        // ...some other fields that we're too lazy to type out right now
       }
 
       const uploadAndReturnImage = async () => {
