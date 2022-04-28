@@ -180,6 +180,7 @@ const Header: React.FC = () => {
 
           .right {
             margin-left: auto;
+            margin-right: 1rem;
           }
 
           .right a {
@@ -198,13 +199,13 @@ const Header: React.FC = () => {
 
   return (
     <nav>
+      <Link href="/"><img src="https://res.cloudinary.com/dhw4wtx8z/image/upload/v1651178425/Knitting_Blog-logos_transparent_ls0i6n.png" width="150" height="150" /></Link>
       {left}
       {right}
       <style jsx>{`
         nav {
-          background-image: url("https://res.cloudinary.com/dhw4wtx8z/image/upload/v1651074364/85863432-A9B3-4DA6-A045-7AE7F2650C97_1_201_a_kynhvx.heic");
           display: flex;
-          padding: 2rem;
+          padding: 0rem;
           align-items: center;
         }
       `}</style>
