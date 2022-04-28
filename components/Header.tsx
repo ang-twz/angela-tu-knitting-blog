@@ -105,7 +105,7 @@ const Header: React.FC = () => {
 
           .right a {
             border: 1px solid var(--geist-foreground);
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 3rem;
             border-radius: 3px;
           }
         `}</style>
