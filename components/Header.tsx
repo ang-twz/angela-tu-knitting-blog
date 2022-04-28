@@ -191,6 +191,8 @@ const Header: React.FC = () => {
 
           button {
             border: none;
+            border-radius: 5px;
+            margin-left: 0.5rem;
           }
         `}</style>
       </div>
