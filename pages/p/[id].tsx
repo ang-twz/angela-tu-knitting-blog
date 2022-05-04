@@ -207,9 +207,9 @@ const Post: React.FC<PostProps> = (props) => {
         }
 
         button {
-          background: #ececec;
+          background: #E6D1F2;
           border: 0;
-          border-radius: 0.125rem;
+          border-radius: 5px;
           padding: 1rem 2rem;
         }
 

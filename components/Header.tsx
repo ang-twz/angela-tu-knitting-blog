@@ -193,6 +193,7 @@ const Header: React.FC = () => {
             border: none;
             border-radius: 5px;
             margin-left: 0.5rem;
+            background-color: #E6D1F2;
           }
         `}</style>
       </div>
@@ -209,6 +210,7 @@ const Header: React.FC = () => {
           display: flex;
           padding: 0rem;
           align-items: center;
+          background-color: #CCB7E5;
         }
       `}</style>
     </nav>
